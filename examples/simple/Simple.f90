@@ -12,15 +12,9 @@ program simple
             class(*), intent(in) :: n
         end subroutine
     end interface
-#ifdef _DEBUG
-    benchmark(br, run(10000000, compute_pi))
-    benchmark(br, run(100000000, compute_pi))
-    benchmark(br, run(200000000, compute_pi))
-#else
-    benchmark(br, run(100000000000_i8, compute_pi))
-    benchmark(br, run(1000000000000_i8, compute_pi))
-    benchmark(br, run(10000000000000_i8, compute_pi))
-#endif
+    benchmark(br, run(10, compute_pi))
+    benchmark(br, run(100, compute_pi))
+    benchmark(br, run(1000, compute_pi))
     call br%dispose()
     
     read(*,*)
