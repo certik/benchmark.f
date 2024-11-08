@@ -2,8 +2,8 @@
 
 set -ex
 
-FC=gfortran
-FFLAGS="-ffree-line-length-none -cpp -Iinclude/ -fPIC"
+FC=lfortran
+FFLAGS="--cpp -Iinclude/"
 
 $FC $FFLAGS -c src/Workflow.f90 -o Workflow.o
 $FC $FFLAGS -c src/ArgumentBase.f90 -o ArgumentBase.o
